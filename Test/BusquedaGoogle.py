@@ -34,12 +34,13 @@ def test_buquedaGoogle(driver):
     wait.until(EC.visibility_of_element_located((By.XPATH, "//div[@class='srKDX cvP2Ce']")))
 
     textoPagina = driver.find_elements(By.XPATH, "//div[@class='srKDX cvP2Ce']")
+    print(textoPagina)
 
     for indice, valor in enumerate(textoPagina):
         if indice == 6:
             try:
                 # Espera explícita para asegurar que el enlace esté presente y sea clickeable
-                #wait.until(EC.element_to_be_clickable((By.XPATH, "div[1]/div/div/span/a/h3")))
+                wait.until(EC.element_to_be_clickable((By.XPATH, "div[1]/div/div/span/a/h3")))
                 valor.find_element(By.XPATH, "div[1]/div/div/span/a/h3").click()
                 break
             except Exception as e:
