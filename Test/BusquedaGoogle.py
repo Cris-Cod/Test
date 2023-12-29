@@ -37,10 +37,10 @@ def test_buquedaGoogle(driver):
     print(textoPagina)
 
     for indice, valor in enumerate(textoPagina):
-        if indice == 6:
+        if indice == 3:
             try:
                 # Espera explícita para asegurar que el enlace esté presente y sea clickeable
-                wait.until(EC.element_to_be_clickable((By.XPATH, "div[1]/div/div/span/a/h3")))
+                #wait.until(EC.element_to_be_clickable((By.XPATH, "div[1]/div/div/span/a/h3")))
                 valor.find_element(By.XPATH, "div[1]/div/div/span/a/h3").click()
                 break
             except Exception as e:
